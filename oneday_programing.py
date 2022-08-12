@@ -93,3 +93,49 @@ print(b_set | c_set)
 print(c_set - b_set)
 print(b_set & c_set)
 print(b_set ^ c_set)
+
+
+# 例外
+print('########## 例外 ##########')
+def add_number(a, b):
+    try:
+        return a + b
+    except TypeError as te:
+        print('数値以外')
+add_number(1, 'a')
+
+try:
+    with open('test.txt') as f:
+        print(f.read())
+except FileNotFoundError as fne:
+    print (fne)
+
+
+# オブジェクト
+print('########## オブジェクト ##########')
+hello = "Hello"
+print ( id(hello))
+print( type(hello))
+
+str = 'abaeEFEIfa'
+print ( str.lower())
+print ( str.upper())
+
+
+# クラス
+print('########## クラス ##########')
+class A:
+    name = 'Class A'
+class B(A):
+    pass
+b = B()
+print(b.name)
+
+class A:
+    def hello(self):
+        print('Class A say Hello')
+class B:
+    def hello(self):
+        print('Class B says')
+b = B()
+b.hello()
