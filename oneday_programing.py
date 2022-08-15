@@ -139,3 +139,5 @@ class B:
         print('Class B says')
 b = B()
 b.hello()
+
+print ("World" in "Hello World!")
