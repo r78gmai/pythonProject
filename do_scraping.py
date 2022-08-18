@@ -8,5 +8,4 @@ from bs4 import BeautifulSoup
 
 req  = urllib.request.urlopen('http://quality-start.in/company/')
 soup = BeautifulSoup(req, "html.parser")
-print ( soup.find('h1').text )
-
+print ( soup.find('span', class_="u-display-block site-description under-logo").text )
