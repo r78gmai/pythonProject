@@ -25,5 +25,21 @@ class MyTestCase(unittest.TestCase):
     def test_minus(self):
         self.assertEqual(10, minus(12, 2))
 
+
+    # sample　実行
+    def test_upper(self):
+        self.assertEqual('foo'.upper(), 'FOO')
+
+    def test_isupper(self):
+        self.assertTrue('FOO'.isupper())
+        self.assertFalse('Foo'.isupper())
+
+    def test_split(self):
+        s = 'hello world'
+        self.assertEqual(s.split(), ['hello', 'world'])
+        # check that s.split fails when the separator is not a string
+        with self.assertRaises(TypeError):                              # 特定の例外があることをテスト
+            s.split(2)
+
 if __name__ == '__main__':
     unittest.main()
